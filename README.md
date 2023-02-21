@@ -10,7 +10,7 @@ The model can handle information about customers, clients, products and its cate
 The model will be created in differents schemas, these schemas will be useful to divide the application in different microservices.
 
 There are the list of microservices that will be created.
-- Security service:
+- Security service
 - Sales service
 - Purchase service
 - Stock service
