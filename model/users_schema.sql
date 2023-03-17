@@ -5,31 +5,7 @@
 -- Dumped from database version 15.2
 -- Dumped by pg_dump version 15.2
 
--- Started on 2023-02-27 19:13:35
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
-DROP DATABASE postgres;
---
--- TOC entry 3359 (class 1262 OID 5)
--- Name: postgres; Type: DATABASE; Schema: -; Owner: postgres
---
-
-CREATE DATABASE postgres WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = libc LOCALE = 'English_United States.1252';
-
-
-ALTER DATABASE postgres OWNER TO postgres;
-
-\connect postgres
+-- Started on 2023-03-17 17:42:27
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -43,16 +19,7 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- TOC entry 3360 (class 0 OID 0)
--- Dependencies: 3359
--- Name: DATABASE postgres; Type: COMMENT; Schema: -; Owner: postgres
---
-
-COMMENT ON DATABASE postgres IS 'default administrative connection database';
-
-
---
--- TOC entry 7 (class 2615 OID 16398)
+-- TOC entry 10 (class 2615 OID 16445)
 -- Name: users; Type: SCHEMA; Schema: -; Owner: postgres
 --
 
@@ -66,7 +33,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- TOC entry 220 (class 1259 OID 16412)
+-- TOC entry 224 (class 1259 OID 16446)
 -- Name: roles; Type: TABLE; Schema: users; Owner: postgres
 --
 
@@ -79,7 +46,7 @@ CREATE TABLE users.roles (
 ALTER TABLE users.roles OWNER TO postgres;
 
 --
--- TOC entry 221 (class 1259 OID 16417)
+-- TOC entry 225 (class 1259 OID 16449)
 -- Name: user_roles; Type: TABLE; Schema: users; Owner: postgres
 --
 
@@ -93,7 +60,7 @@ CREATE TABLE users.user_roles (
 ALTER TABLE users.user_roles OWNER TO postgres;
 
 --
--- TOC entry 219 (class 1259 OID 16406)
+-- TOC entry 226 (class 1259 OID 16452)
 -- Name: users; Type: TABLE; Schema: users; Owner: postgres
 --
 
@@ -109,31 +76,37 @@ CREATE TABLE users.users (
 ALTER TABLE users.users OWNER TO postgres;
 
 --
--- TOC entry 3352 (class 0 OID 16412)
--- Dependencies: 220
+-- TOC entry 3363 (class 0 OID 16446)
+-- Dependencies: 224
 -- Data for Name: roles; Type: TABLE DATA; Schema: users; Owner: postgres
 --
 
+COPY users.roles (role_id, role_name) FROM stdin;
+\.
 
 
 --
--- TOC entry 3353 (class 0 OID 16417)
--- Dependencies: 221
+-- TOC entry 3364 (class 0 OID 16449)
+-- Dependencies: 225
 -- Data for Name: user_roles; Type: TABLE DATA; Schema: users; Owner: postgres
 --
 
+COPY users.user_roles (user_role_id, role_id, user_id) FROM stdin;
+\.
 
 
 --
--- TOC entry 3351 (class 0 OID 16406)
--- Dependencies: 219
+-- TOC entry 3365 (class 0 OID 16452)
+-- Dependencies: 226
 -- Data for Name: users; Type: TABLE DATA; Schema: users; Owner: postgres
 --
 
+COPY users.users (user_id, username, password, email, blocked) FROM stdin;
+\.
 
 
 --
--- TOC entry 3204 (class 2606 OID 16416)
+-- TOC entry 3214 (class 2606 OID 16457)
 -- Name: roles roles_pkey; Type: CONSTRAINT; Schema: users; Owner: postgres
 --
 
@@ -142,7 +115,7 @@ ALTER TABLE ONLY users.roles
 
 
 --
--- TOC entry 3206 (class 2606 OID 16421)
+-- TOC entry 3216 (class 2606 OID 16459)
 -- Name: user_roles user_roles_pkey; Type: CONSTRAINT; Schema: users; Owner: postgres
 --
 
@@ -151,7 +124,7 @@ ALTER TABLE ONLY users.user_roles
 
 
 --
--- TOC entry 3202 (class 2606 OID 16411)
+-- TOC entry 3218 (class 2606 OID 16461)
 -- Name: users users_pkey; Type: CONSTRAINT; Schema: users; Owner: postgres
 --
 
@@ -160,7 +133,7 @@ ALTER TABLE ONLY users.users
 
 
 --
--- TOC entry 3207 (class 2606 OID 16427)
+-- TOC entry 3219 (class 2606 OID 16462)
 -- Name: user_roles roles_role_id_fkey; Type: FK CONSTRAINT; Schema: users; Owner: postgres
 --
 
@@ -169,7 +142,7 @@ ALTER TABLE ONLY users.user_roles
 
 
 --
--- TOC entry 3208 (class 2606 OID 16422)
+-- TOC entry 3220 (class 2606 OID 16467)
 -- Name: user_roles users_user_id_fkey; Type: FK CONSTRAINT; Schema: users; Owner: postgres
 --
 
@@ -177,7 +150,7 @@ ALTER TABLE ONLY users.user_roles
     ADD CONSTRAINT users_user_id_fkey FOREIGN KEY (user_id) REFERENCES users.users(user_id);
 
 
--- Completed on 2023-02-27 19:13:36
+-- Completed on 2023-03-17 17:42:28
 
 --
 -- PostgreSQL database dump complete

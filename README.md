@@ -16,3 +16,5 @@ There are the list of microservices that will be created.
 - Stock service
 
 ![Microservices](Database_inventory_Microservices.drawio.png "Microservices")
+
+Online diagram: https://app.diagrams.net/#G14Bx9jK6fqe4k9HpnK5hF4SMXaT2xGclW

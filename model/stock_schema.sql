@@ -5,31 +5,7 @@
 -- Dumped from database version 15.2
 -- Dumped by pg_dump version 15.2
 
--- Started on 2023-02-27 19:03:54
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
-DROP DATABASE postgres;
---
--- TOC entry 3352 (class 1262 OID 5)
--- Name: postgres; Type: DATABASE; Schema: -; Owner: postgres
---
-
-CREATE DATABASE postgres WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = libc LOCALE = 'English_United States.1252';
-
-
-ALTER DATABASE postgres OWNER TO postgres;
-
-\connect postgres
+-- Started on 2023-03-17 17:42:09
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -43,16 +19,7 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- TOC entry 3353 (class 0 OID 0)
--- Dependencies: 3352
--- Name: DATABASE postgres; Type: COMMENT; Schema: -; Owner: postgres
---
-
-COMMENT ON DATABASE postgres IS 'default administrative connection database';
-
-
---
--- TOC entry 9 (class 2615 OID 16460)
+-- TOC entry 9 (class 2615 OID 16427)
 -- Name: stock; Type: SCHEMA; Schema: -; Owner: postgres
 --
 
@@ -66,7 +33,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- TOC entry 224 (class 1259 OID 16461)
+-- TOC entry 222 (class 1259 OID 16428)
 -- Name: categories; Type: TABLE; Schema: stock; Owner: postgres
 --
 
@@ -79,7 +46,7 @@ CREATE TABLE stock.categories (
 ALTER TABLE stock.categories OWNER TO postgres;
 
 --
--- TOC entry 225 (class 1259 OID 16468)
+-- TOC entry 223 (class 1259 OID 16433)
 -- Name: products; Type: TABLE; Schema: stock; Owner: postgres
 --
 
@@ -98,23 +65,27 @@ CREATE TABLE stock.products (
 ALTER TABLE stock.products OWNER TO postgres;
 
 --
--- TOC entry 3345 (class 0 OID 16461)
--- Dependencies: 224
+-- TOC entry 3358 (class 0 OID 16428)
+-- Dependencies: 222
 -- Data for Name: categories; Type: TABLE DATA; Schema: stock; Owner: postgres
 --
 
+COPY stock.categories (category_id, description) FROM stdin;
+\.
 
 
 --
--- TOC entry 3346 (class 0 OID 16468)
--- Dependencies: 225
+-- TOC entry 3359 (class 0 OID 16433)
+-- Dependencies: 223
 -- Data for Name: products; Type: TABLE DATA; Schema: stock; Owner: postgres
 --
 
+COPY stock.products (product_id, code, name, price, stock, description, avaiable, category_id) FROM stdin;
+\.
 
 
 --
--- TOC entry 3199 (class 2606 OID 16467)
+-- TOC entry 3212 (class 2606 OID 16437)
 -- Name: categories categories_pkey; Type: CONSTRAINT; Schema: stock; Owner: postgres
 --
 
@@ -123,7 +94,7 @@ ALTER TABLE ONLY stock.categories
 
 
 --
--- TOC entry 3201 (class 2606 OID 16472)
+-- TOC entry 3214 (class 2606 OID 16439)
 -- Name: products products_pkey; Type: CONSTRAINT; Schema: stock; Owner: postgres
 --
 
@@ -132,7 +103,7 @@ ALTER TABLE ONLY stock.products
 
 
 --
--- TOC entry 3202 (class 2606 OID 16473)
+-- TOC entry 3215 (class 2606 OID 16440)
 -- Name: products category_id_product_fkey; Type: FK CONSTRAINT; Schema: stock; Owner: postgres
 --
 
@@ -140,7 +111,7 @@ ALTER TABLE ONLY stock.products
     ADD CONSTRAINT category_id_product_fkey FOREIGN KEY (category_id) REFERENCES stock.categories(category_id);
 
 
--- Completed on 2023-02-27 19:03:55
+-- Completed on 2023-03-17 17:42:10
 
 --
 -- PostgreSQL database dump complete
