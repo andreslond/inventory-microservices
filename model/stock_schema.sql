@@ -38,7 +38,7 @@ SET default_table_access_method = heap;
 --
 
 CREATE TABLE stock.categories (
-    category_id bigint NOT NULL,
+    category_id integer NOT NULL,
     description bit varying(50)[]
 );
 
@@ -51,14 +51,14 @@ ALTER TABLE stock.categories OWNER TO postgres;
 --
 
 CREATE TABLE stock.products (
-    product_id bigint NOT NULL,
+    product_id integer NOT NULL,
     code character varying(50),
     name character varying(100),
     price numeric(10,0),
     stock integer,
     description character varying(255),
     avaiable boolean,
-    category_id bigint
+    category_id integer
 );
 
 

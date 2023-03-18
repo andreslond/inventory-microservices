@@ -38,7 +38,7 @@ SET default_table_access_method = heap;
 --
 
 CREATE TABLE users.roles (
-    role_id bigint NOT NULL,
+    role_id integer NOT NULL,
     role_name character varying(50) NOT NULL
 );
 
@@ -51,9 +51,9 @@ ALTER TABLE users.roles OWNER TO postgres;
 --
 
 CREATE TABLE users.user_roles (
-    user_role_id bigint NOT NULL,
-    role_id bigint NOT NULL,
-    user_id bigint NOT NULL
+    user_role_id integer NOT NULL,
+    role_id integer NOT NULL,
+    user_id integer NOT NULL
 );
 
 
@@ -65,7 +65,7 @@ ALTER TABLE users.user_roles OWNER TO postgres;
 --
 
 CREATE TABLE users.users (
-    user_id bigint NOT NULL,
+    user_id integer NOT NULL,
     username character varying(100) NOT NULL,
     password character varying(50),
     email character varying(100),
