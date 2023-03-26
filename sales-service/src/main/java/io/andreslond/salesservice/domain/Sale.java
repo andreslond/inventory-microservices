@@ -1,10 +1,17 @@
 package io.andreslond.salesservice.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+import java.sql.Timestamp;
+
+@Data
+@AllArgsConstructor
 public class Sale {
 
     private Integer Id;
 
-    private TimeStamp sale_date;
+    private Timestamp sale_date;
 
     private Integer total;
 
