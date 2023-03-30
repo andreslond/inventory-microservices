@@ -1,2 +1,5 @@
-package io.andreslond.salesservice.sale.infraestructure.in.web;public class CreateSale {
+package io.andreslond.salesservice.sale.infraestructure.in.web;
+
+@RestController
+public class CreateSaleController {
 }

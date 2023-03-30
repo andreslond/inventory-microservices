@@ -1,9 +1,7 @@
-package io.andreslond.salesservice.domain;
+package io.andreslond.salesservice.sale.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 @AllArgsConstructor
 @Data
