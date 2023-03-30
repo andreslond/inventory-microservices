@@ -13,7 +13,7 @@ public class Customer {
 
     private String name;
 
-    private Integer id_card;
+    private Integer cardId;
 
     private String address;
 

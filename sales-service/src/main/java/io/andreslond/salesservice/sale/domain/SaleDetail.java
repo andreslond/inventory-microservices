@@ -8,13 +8,13 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class SaleDetail {
 
-    private Integer sale_detail_id;
+    private Integer id;
 
     private Double amount;
 
     private BigDecimal price;
 
-    private Integer sale_id;
+    private Integer saleId;
 
-    private Integer product_id;
+    private Integer productId;
 }

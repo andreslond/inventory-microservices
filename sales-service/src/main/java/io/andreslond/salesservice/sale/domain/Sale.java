@@ -9,9 +9,9 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 public class Sale {
 
-    private Integer Id;
+    private Integer id;
 
-    private Timestamp sale_date;
+    private Timestamp saleDate;
 
     private Integer total;
 
@@ -19,10 +19,10 @@ public class Sale {
 
     private boolean canceled;
 
-    private Integer payment_receipt_id;
+    private Integer paymentReceiptId;
 
-    private Integer customer_Id;
+    private Integer customerId;
 
-    private Integer user_id;
+    private Integer userId;
 
 }
