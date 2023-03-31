@@ -7,7 +7,7 @@ The model can handle information about customers, clients, products and its cate
 ![Data model](Database_inventory.model.png "Data Model")
 
 
-The model will be created in differents schemas, these schemas will be useful to divide the application in different microservices.
+The model will be created in different schemas, these schemas will be useful to divide the application in different microservices.
 
 There are the list of microservices that will be created.
 - Security service
