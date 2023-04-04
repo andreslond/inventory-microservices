@@ -1,6 +1,7 @@
 package io.andreslond.salesservice.domain.services;
 
 import io.andreslond.salesservice.domain.entities.Sale;
+import io.andreslond.salesservice.domain.entities.SaleDetail;
 
 import java.util.List;
 
