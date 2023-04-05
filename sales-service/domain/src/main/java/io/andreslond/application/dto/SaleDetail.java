@@ -1,4 +1,4 @@
-package io.andreslond.salesservice.domain.entities;
+package io.andreslond.application.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

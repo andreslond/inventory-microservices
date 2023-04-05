@@ -1,1 +1,5 @@
 rootProject.name = 'sales-service'
+include 'domain'
+include 'application'
+include 'infraestructure'
+

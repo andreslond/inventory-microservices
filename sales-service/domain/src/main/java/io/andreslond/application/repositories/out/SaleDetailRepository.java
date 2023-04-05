@@ -1,7 +1,7 @@
-package io.andreslond.salesservice.domain.repositories;
+package io.andreslond.application.repositories;
 
 
-import io.andreslond.salesservice.domain.entities.SaleDetail;
+import io.andreslond.dto.SaleDetail;
 
 import java.util.List;
 

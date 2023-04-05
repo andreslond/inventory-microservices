@@ -1,10 +1,10 @@
-package io.andreslond.salesservice.domain.repositories;
+package io.andreslond.application.repositories;
 
-import io.andreslond.salesservice.domain.entities.Sale;
+import io.andreslond.dto.Sale;
 
 import java.util.List;
 
-public interface SalesRepository {
+public interface SaleRepository {
 
     void saveSale(Sale sale);
 
