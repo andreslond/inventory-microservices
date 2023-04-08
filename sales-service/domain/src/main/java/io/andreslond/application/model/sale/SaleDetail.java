@@ -1,4 +1,4 @@
-package io.andreslond.application.dto;
+package io.andreslond.application.model.sale;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

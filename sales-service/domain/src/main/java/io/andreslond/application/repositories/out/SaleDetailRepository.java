@@ -1,7 +1,6 @@
-package io.andreslond.application.repositories;
+package io.andreslond.application.repositories.out;
 
-
-import io.andreslond.dto.SaleDetail;
+import io.andreslond.application.model.sale.SaleDetail;
 
 import java.util.List;
 

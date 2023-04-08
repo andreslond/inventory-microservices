@@ -1,6 +1,6 @@
-package io.andreslond.salesservice.services;
+package io.andreslond.application.services;
 
-import io.andreslond.dto.Sale;
+import io.andreslond.application.model.sale.Sale;
 
 import java.util.List;
 
